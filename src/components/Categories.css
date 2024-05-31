@@ -1,0 +1,53 @@
+.categories {
+    display: flex;
+    max-width: 759px;
+    gap: 20px;
+    font-size: 24px;
+    color: #474747;
+    font-weight: 400;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  
+  .categories .item {
+    font-family: Almarai, sans-serif;
+    border-radius: 30px;
+    box-shadow: 5px 5px 20px 0px rgba(181, 181, 181, 0.20);
+    border-color: rgba(190, 190, 190, 0.5);
+    border-style: solid;
+    border-width: 1px;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    padding: 21px 49px;
+  }
+  
+  .categories .item-drinks {
+    padding: 21px 46px;
+    white-space: nowrap;
+  }
+  
+  .categories .item-fruit {
+    padding: 21px 60px;
+    white-space: nowrap;
+  }
+  
+  .categories .item-bakery {
+    padding: 18px 45px;
+    white-space: nowrap;
+  }
+  
+  @media (max-width: 991px) {
+    .categories {
+      flex-wrap: wrap;
+    }
+  
+    .categories .item,
+    .categories .item-drinks,
+    .categories .item-fruit,
+    .categories .item-bakery {
+      white-space: initial;
+      padding: 0 20px;
+    }
+  }
+  

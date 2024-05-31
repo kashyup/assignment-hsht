@@ -1,0 +1,82 @@
+.my-component {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.custom-product-container {
+  display: flex;
+  width: 1121px;
+  max-width: 100%;
+  flex-direction: column;
+  margin: 20px 0 0 0;
+}
+
+@media (max-width: 991px) {
+  .custom-product-container {
+      margin-top: 40px;
+  }
+}
+
+.product-page-heading {
+  color: #474747;
+  font: 700 32px Almarai, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .product-page-heading {
+      max-width: 100%;
+  }
+}
+
+.product-box {
+  margin-top: 51px;
+}
+
+@media (max-width: 991px) {
+  .product-box {
+      max-width: 100%;
+      margin-top: 40px;
+  }
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping of product cards */
+  gap: 20px;
+}
+
+@media (max-width: 991px) {
+  .box {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0px;
+  }
+}
+
+.products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Allows wrapping of product cards */
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.product-card {
+  flex: 1 1 calc(50% - 20px); /* Two products per row */
+  max-width: calc(50% - 20px); /* Ensure two products per row with some gap */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 20px; /* Add some space between rows */
+}
+
+@media (max-width: 991px) {
+  .products {
+      width: 100%;
+      margin-left: 0;
+  }
+
+  .product-card {
+      flex: 1 1 100%; /* Single column layout for smaller screens */
+      max-width: 100%;
+  }
+}

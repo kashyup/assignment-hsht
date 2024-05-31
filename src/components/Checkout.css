@@ -1,0 +1,31 @@
+.checkout {
+    padding: 20px;
+  }
+  
+  .checkout-products {
+    margin-bottom: 20px;
+  }
+  
+  .checkout-summary {
+    text-align: right;
+  }
+  
+  .checkout-summary h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .checkout-summary p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .checkout-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  

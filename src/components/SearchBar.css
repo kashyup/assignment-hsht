@@ -1,0 +1,39 @@
+.search-bar {
+    border-radius: 30px;
+    box-shadow: 5px 5px 20px 0px rgba(181, 181, 181, 0.20);
+    border-color: rgba(190, 190, 190, 0.5);
+    border-style: solid;
+    border-width: 1px;
+    background-color: #FFF;
+    display: flex;
+    max-width: 918px;
+    gap: 20px;
+    font-size: 24px;
+    color: #949494;
+    font-weight: 300;
+    white-space: nowrap;
+    justify-content: space-between;
+    padding: 25px 30px;
+  }
+  
+  .search-bar .search-text {
+    font-family: Almarai, sans-serif;
+    margin: auto 0;
+  }
+  
+  .search-bar img {
+    aspect-ratio: 1.14;
+    object-fit: auto;
+    object-position: center;
+    width: 34px;
+    fill: #6A6A6A;
+  }
+  
+  @media (max-width: 991px) {
+    .search-bar {
+      flex-wrap: wrap;
+      white-space: initial;
+      padding: 0 20px;
+    }
+  }
+  
