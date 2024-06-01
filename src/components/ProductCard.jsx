@@ -1,16 +1,31 @@
-import React from "react";
-import { useShop } from "../context/ShopContext";
-import "./ProductCard.css";
+import React, { useState, useEffect } from 'react';
+import { useShop } from '../context/ShopContext';
+import './ProductCard.css';
 
 const ProductCard = ({ id, title, description, price, imgSrc, available }) => {
-  const { addToCart, addToWishlist } = useShop();
+  const { cart, wishlist, addToCart, addToWishlist, removeFromCart, removeFromWishlist } = useShop();
+  const [isInCart, setIsInCart] = useState(false);
+  const [isInWishlist, setIsInWishlist] = useState(false);
+
+  useEffect(() => {
+    setIsInCart(cart.some(item => item.id === id));
+    setIsInWishlist(wishlist.some(item => item.id === id));
+  }, [cart, wishlist, id]);
 
   const handleAddToCart = () => {
-    addToCart({ id, title, description, price, imgSrc, available });
+    if (isInCart) {
+      removeFromCart(id);
+    } else {
+      addToCart({ id, title, description, price, imgSrc, available });
+    }
   };
 
   const handleAddToWishlist = () => {
-    addToWishlist({ id, title, description, price, imgSrc, available });
+    if (isInWishlist) {
+      removeFromWishlist(id);
+    } else {
+      addToWishlist({ id, title, description, price, imgSrc, available });
+    }
   };
 
   return (
@@ -38,21 +53,25 @@ const ProductCard = ({ id, title, description, price, imgSrc, available }) => {
                 {price}
               </div>
               <div className="product-icons">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/6d2afb6e9c1503727fe35464e3ebacc57d3de3fcbf1f664c7f5f1dce04c76e99?apiKey=a45cd760213d4a3985aadae9c042b89d&"
-                    alt="Add to wishlist"
-                    className="icon"
-                    onClick={handleAddToCart}
-                  />
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/ef57d74cfed954885e52934d68a3e51ea2fafa7d733caa37514a21dc998a0f8e?apiKey=a45cd760213d4a3985aadae9c042b89d&"
-                    alt="Add to cart"
-                    className="icon-special"
-                    onClick={handleAddToWishlist}
-                  />
-                </div>
+                <img
+                  loading="lazy"
+                  src={isInCart 
+                    ? "/icons/cart-filled.svg" 
+                    : "/icons/cart.svg"}
+                  className={`icon ${isInCart ? 'icon-active' : ''}`}
+                  alt="Add to cart"
+                  onClick={handleAddToCart}
+                />
+                <img
+                  loading="lazy"
+                  src={isInWishlist 
+                    ? "/icons/wishlist-filled.svg" 
+                    : "/icons/wishlist.svg"}
+                  className={`icon-special ${isInWishlist ? 'icon-active' : ''}`}
+                  alt="Add to wishlist"
+                  onClick={handleAddToWishlist}
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -1,4 +1,3 @@
-// SideNavigationComponent.js
 import React from 'react';
 import './CartComponent.css';
 import { useShop } from '../context/ShopContext';
@@ -12,7 +11,9 @@ const SideNavigationComponent = ({ onShowCheckout }) => {
         <div className="badge badge-red">{wishlist.length}</div>
         <img
           loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/3847642ecbb90cf0c8766cb026b8e6e617a2e532bfb8d4fef9308fedf0ed4712?apiKey=a45cd760213d4a3985aadae9c042b89d&"
+          src={wishlist.length > 0 
+            ? "/icons/wishlist-filled.svg" 
+            : "/icons/wishlist.svg"}
           className="image-small"
           alt="Wishlist"
         />
@@ -27,7 +28,9 @@ const SideNavigationComponent = ({ onShowCheckout }) => {
         <div className="badge badge-blue">{cart.length}</div>
         <img
           loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/3a7f0b4e09e982a262e58945c9cc1339eadfab9f3587555fc70c0dd83d1aacdb?apiKey=a45cd760213d4a3985aadae9c042b89d&"
+          src={cart.length > 0 
+            ? "/icons/cart-filled.svg" 
+            : "/icons/cart.svg"}
           className="image-gray"
           alt="Cart"
         />

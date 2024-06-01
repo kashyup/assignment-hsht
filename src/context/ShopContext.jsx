@@ -10,8 +10,8 @@ const initialState = {
 const shopReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_TO_CART':
-      const existingItem = state.cart.find(item => item.id === action.payload.id);
-      if (existingItem) {
+      const existingCartItem = state.cart.find(item => item.id === action.payload.id);
+      if (existingCartItem) {
         return {
           ...state,
           cart: state.cart.map(item =>
@@ -51,6 +51,20 @@ const shopReducer = (state, action) => {
         ...state,
         cart: state.cart.filter(item => item.id !== action.payload)
       };
+    case 'ADD_TO_WISHLIST':
+      const existingWishlistItem = state.wishlist.find(item => item.id === action.payload.id);
+      if (existingWishlistItem) {
+        return state;
+      }
+      return {
+        ...state,
+        wishlist: [...state.wishlist, action.payload]
+      };
+    case 'REMOVE_FROM_WISHLIST':
+      return {
+        ...state,
+        wishlist: state.wishlist.filter(item => item.id !== action.payload)
+      };
     default:
       return state;
   }
@@ -75,9 +89,26 @@ export const ShopProvider = ({ children }) => {
     dispatch({ type: 'REMOVE_FROM_CART', payload: id });
   };
 
+  const addToWishlist = item => {
+    dispatch({ type: 'ADD_TO_WISHLIST', payload: item });
+  };
+
+  const removeFromWishlist = id => {
+    dispatch({ type: 'REMOVE_FROM_WISHLIST', payload: id });
+  };
+
   return (
     <ShopContext.Provider
-      value={{ cart: state.cart, wishlist: state.wishlist, addToCart, increaseQuantity, decreaseQuantity, removeFromCart }}
+      value={{ 
+        cart: state.cart, 
+        wishlist: state.wishlist, 
+        addToCart, 
+        increaseQuantity, 
+        decreaseQuantity, 
+        removeFromCart,
+        addToWishlist,
+        removeFromWishlist
+      }}
     >
       {children}
     </ShopContext.Provider>

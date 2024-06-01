@@ -1,4 +1,3 @@
-/* Footer.css */
 .footer {
   justify-content: center;
   align-items: start;
@@ -57,6 +56,7 @@
   font-size: 20px;
   text-align: right;
   justify-content: space-between;
+  padding-bottom: 12px;
   margin: 36px 0 0 112px;
 }
 
@@ -92,8 +92,6 @@
   }
 }
 
-
-
 .separator-zindex {
   border-color: rgba(230, 230, 235, 1);
   border-style: solid;
@@ -118,6 +116,7 @@
   font-size: 20px;
   text-align: right;
   justify-content: space-between;
+  padding-bottom: 12px;
   margin: 36px 0 0 110px;
 }
 
@@ -126,7 +125,6 @@
     white-space: initial;
   }
 }
-
 
 .discount-text {
   color: var(--Text-Black, #000);
@@ -153,6 +151,7 @@
     margin-top: 40px;
   }
 }
+
 .divider {
   border-color: rgba(230, 230, 235, 1);
   border-style: solid;
@@ -169,13 +168,16 @@
 }
 
 .total-container {
-  align-self: end;
+  align-self: center;
   display: flex;
-  width: 553px;
+  width: 309px;
   max-width: 100%;
   gap: 20px;
+  font-size: 20px;
+  text-align: right;
   justify-content: space-between;
-  margin: 22px 20px 0 0;
+  padding-bottom: 12px;
+  margin: 36px 0 0 112px;
 }
 
 @media (max-width: 991px) {
@@ -193,7 +195,7 @@
 
 .total-price-container {
   display: flex;
-  gap: 20px;
+  gap: 100px;
   justify-content: space-between;
 }
 
@@ -203,14 +205,12 @@
   }
 }
 
-
-
 .total-price {
   color: var(--Text-Roman-Silver, #82828B);
   text-align: right;
   margin: auto 0;
   font: 20px Almarai, sans-serif;
-} 
+}
 
 .checkout-button {
   justify-content: center;
@@ -244,159 +244,8 @@
   }
 }
 
-
-
-
-
-
 @media (max-width: 991px) {
   .flex-gap-container {
     white-space: initial;
   }
 }
-
-
-
-
-
-
-
-
-.footer-subtotal {
-  color: var(--Text-Black, #000);
-  font-family: Almarai, sans-serif;
-}
-.footer-subtotal-value {
-  color: var(--Text-Roman-Silver, #828283);
-  font-family: Almarai, sans-serif;
-}
-
-.inner-container {
-  display: flex;
-  margin-top: 42px;
-  padding-left: 16px;
-  flex-direction: column;
-}
-
-@media (max-width: 991px) {
-  .inner-container {
-    max-width: 100%;
-    margin-top: 40px;
-  }
-}
-
-.separator {
-  border-color: rgba(230, 230, 235, 1);
-  border-style: solid;
-  border-width: 1px;
-  background-color: #E6E6EB;
-  height: 1px;
-}
-
-.separator-zindex {
-  border-color: rgba(230, 230, 235, 1);
-  border-style: solid;
-  border-width: 1px;
-  background-color: #E6E6EB;
-  z-index: 10;
-  height: 1px;
-}
-
-@media (max-width: 991px) {
-  .separator-zindex {
-    max-width: 100%;
-  }
-}
-
-
-@media (max-width: 991px) {
-  .separator {
-    max-width: 100%;
-  }
-}
-
-
-
-  
-  .footer .inner-container {
-    display: flex;
-    width: 1125px;
-    max-width: 100%;
-    flex-direction: column;
-    margin: 64px 0 0 84px;
-  }
-  
-  .footer .divider {
-    border-color: rgba(230, 230, 235, 1);
-    border-style: solid;
-    border-width: 1px;
-    background-color: #E6E6EB;
-    height: 1px;
-  }
-  
-  .footer .summary-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    font-size: 20px;
-    text-align: right;
-    margin: 36px 0 0 112px;
-  }
-  
-  .footer .summary-label,
-  .footer .summary-value {
-    color: var(--Text-Roman-Silver, #82828B);
-    font-family: Almarai, sans-serif;
-  }
-  
-  .footer .summary-label {
-    color: var(--Text-Black, #000);
-  }
-  
-  .footer .summary-divider {
-    margin-top: 42px;
-  }
-  
-  .footer .total-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    font-size: 20px;
-    text-align: right;
-    margin: 22px 20px 0 0;
-  }
-  
-  .footer .total-label {
-    color: var(--Text-Black, #000);
-    text-align: right;
-    font: 20px Almarai, sans-serif;
-  }
-  
-  .footer .total-value {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-  }
-  
-  .footer .total-amount {
-    color: var(--Text-Roman-Silver, #82828B);
-    text-align: right;
-    font: 20px Almarai, sans-serif;
-  }
-  
-  .footer .checkout-button {
-    justify-content: center;
-    border-radius: 8px;
-    background-color: #7FD287;
-    color: var(--Text-White, #FFF);
-    letter-spacing: -0.32px;
-    padding: 16px 32px;
-    font: 16px Almarai, sans-serif;
-  }
-  
-  .footer .divider-small {
-    margin-top: 25px;
-  }
-  
