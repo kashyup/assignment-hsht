@@ -6,7 +6,8 @@
 
 .custom-product-container {
   display: flex;
-  width: 2400px;
+  width: 1000px;
+  height: 300px;
   max-width: 70%;
   flex-direction: column;
   margin: 120px 0 0 0px;
@@ -80,19 +81,3 @@
   }
 }
 
-.search-bar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.search-input {
-  width: 100%;
-  padding: 8px;
-  /* border: 1px solid #ddd;   */
-  border-radius: 30px;
-}
-
-.search-input::placeholder {
-  color: #e1dfdf;
-}
