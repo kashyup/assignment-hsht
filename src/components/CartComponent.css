@@ -18,12 +18,13 @@
 .side-navigation-component .badge {
   font-family: Almarai, sans-serif;
   border-radius: 100px;
-  align-self: center;
-  display: flex;
+  align-self: end;
+  width: 24px;
   align-items: center;
   justify-content: center;
-  width: 24px;
   height: 24px;
+  display: flex;
+  text-align: center;
 }
 
 .side-navigation-component .badge-red {
@@ -42,19 +43,21 @@
   background-color: rgba(0, 133, 255, 0.70);
 }
 
-.side-navigation-component .icon-small {
+.side-navigation-component .image-small,
+.side-navigation-component .image-gray {
   width: 52px;
-  height: 52px;
+  fill: #E86F6F;
+  stroke-width: 1px;
+  stroke: rgba(255, 94, 94, 0.50);
   margin-top: 5px;
 }
 
 .side-navigation-component .image-medium {
   width: 58px;
-  height: 58px;
   margin: auto 0;
 }
 
-.side-navigation-component .icon-gray {
-  width: 52px;
-  height: 52px;
+.side-navigation-component .icon-active {
+  transform: scale(1.1); /* This enlarges the icon slightly when active */
+  transition: transform 0.2s; /* Smooth transition */
 }

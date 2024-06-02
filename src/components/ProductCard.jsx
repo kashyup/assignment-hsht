@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React ,{useState,useEffect}from 'react';
 import { useShop } from '../context/ShopContext';
 import './ProductCard.css';
 
 const ProductCard = ({ id, title, description, price, imgSrc, available }) => {
-  const { cart, wishlist, addToCart, addToWishlist, removeFromCart, removeFromWishlist } = useShop();
+  const { addToCart, addToWishlist, cart, wishlist,removeFromCart,removeFromWishlist } = useShop();
   const [isInCart, setIsInCart] = useState(false);
   const [isInWishlist, setIsInWishlist] = useState(false);
 
@@ -11,7 +11,6 @@ const ProductCard = ({ id, title, description, price, imgSrc, available }) => {
     setIsInCart(cart.some(item => item.id === id));
     setIsInWishlist(wishlist.some(item => item.id === id));
   }, [cart, wishlist, id]);
-
   const handleAddToCart = () => {
     if (isInCart) {
       removeFromCart(id);
@@ -28,6 +27,13 @@ const ProductCard = ({ id, title, description, price, imgSrc, available }) => {
     }
   };
 
+  const truncateDescription = (text, maxLength) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + '...';
+    }
+    return text;
+  };
+
   return (
     <div className="product-card">
       <div className="product-details-container">
@@ -37,10 +43,10 @@ const ProductCard = ({ id, title, description, price, imgSrc, available }) => {
         <div className="product-details">
           <div className="product-title-container">
             <div className="product-title">{title}</div>
-            <div className="product-description">{description}</div>
+            <div className="product-description">{truncateDescription(description, 100)}</div>
             <div className="product-availability">
               {available > 10 ? (
-                <span>Available</span>
+                <span className='span-text-available'>Available</span>
               ) : (
                 <>
                   <span className="font-weight-normal">Only</span> {available}{" "}

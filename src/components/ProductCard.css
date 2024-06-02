@@ -1,8 +1,8 @@
-.product-card{
+/* .product-card {
   border-radius: 30px;
   box-shadow: 5px 5px 20px 0px rgba(133, 133, 133, 0.20);
   background-color: #FFF;
-  max-width: 518px;
+  max-width: 100px;
   flex-grow: 1;
   width: 100%;
   padding: 29px 32px;
@@ -12,9 +12,28 @@
   .product-card {
     max-width: 100%;
     margin-top: 40px;
-    padding: 0,20px;
+    padding: 0 20px;
+  }
+} */
+.product-card {
+  border-radius: 30px;
+  box-shadow: 5px 5px 20px 0px rgba(133, 133, 133, 0.20);
+  background-color: #FFF;
+  max-width: 1200px; /* Increased the max-width */
+  flex-grow: 1;
+  width: 100%;
+  padding: 29px 32px;
+  margin-bottom: 90px;
+}
+
+@media (max-width: 1200px) {
+  .product-card {
+    max-width: 100%;
+    margin-top: 40px;
+    padding: 0 20px;
   }
 }
+
 
 .product-details-container {
   gap: 20px;
@@ -22,7 +41,7 @@
 }
 
 @media (max-width: 991px) {
-  .product-details-container{
+  .product-details-container {
     flex-direction: column;
     align-items: stretch;
     gap: 0px;
@@ -46,9 +65,10 @@
 
 .product-image img {
   aspect-ratio: 1;
-  object-fit: auto;
+  object-fit: cover;
   object-position: center;
   width: 200px;
+  height: 200px;
   max-width: 100%;
   align-self: stretch;
   margin: auto 0;
@@ -87,7 +107,6 @@
   }
 }
 
-
 .product-title {
   color: #474747;
   font: 700 20px Almarai, sans-serif;
@@ -96,7 +115,25 @@
 .product-description {
   color: #474747;
   margin-top: 21px;
-  font:400 16px Almarai, sans-serif;
+  font: 400 16px Almarai, sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.span-text-available {
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px 0px rgba(255, 210, 178, 0.50);
+  border-color: rgba(255, 148, 70, 0.5);
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(255, 147, 69, 0.80);
+  margin-top: 101px;
+  color: #fff;
+  justify-content: center;
+  padding: 3px 10px;
+  font: 700 14px Almarai, sans-serif;
+  max-width: 30%;
+  text-align: center;
 }
 
 .product-availability {
@@ -109,8 +146,10 @@
   margin-top: 101px;
   color: #fff;
   justify-content: center;
-  padding: 6px 19px;
+  padding: 3px 10px;
   font: 700 14px Almarai, sans-serif;
+  max-width: 30%;
+  text-align: center;
 }
 
 @media (max-width: 991px) {
@@ -151,17 +190,14 @@
 }
 
 .icon {
-  aspect-ratio: 1.04;
-  object-fit: auto;
-  object-position: center;
   width: 28px;
+  height: 28px;
+  cursor: pointer;
 }
 
 .icon-special {
-  aspect-ratio: 1.19;
-  object-fit: auto;
-  object-position: center;
   width: 32px;
+  height: 32px;
+  cursor: pointer;
   fill: #979797;
 }
-

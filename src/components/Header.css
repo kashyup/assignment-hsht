@@ -8,11 +8,12 @@
   
   .header-title {
     color: #000;
-    font-family: Almarai, sans-serif;
+    font-family:  Almarai, sans-serif;
     font-weight: 700;
     /* flex-grow: 1; */
     margin: auto 0;
     padding-right: 10px;
+    font-size: 30px;
   }
   
   .search-bar {

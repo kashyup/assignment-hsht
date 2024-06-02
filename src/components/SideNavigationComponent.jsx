@@ -4,6 +4,8 @@ import { useShop } from '../context/ShopContext';
 
 const SideNavigationComponent = ({ onShowCheckout }) => {
   const { cart, wishlist } = useShop();
+  const isInCart = cart.length > 0;
+  const isInWishlist = wishlist.length > 0;
   
   return (
     <div className="side-navigation-component">
@@ -11,10 +13,10 @@ const SideNavigationComponent = ({ onShowCheckout }) => {
         <div className="badge badge-red">{wishlist.length}</div>
         <img
           loading="lazy"
-          src={wishlist.length > 0 
+          src={isInWishlist 
             ? "/icons/wishlist-filled.svg" 
             : "/icons/wishlist.svg"}
-          className="image-small"
+          className={`image-small ${isInWishlist ? 'icon-active' : ''}`}
           alt="Wishlist"
         />
       </div>
@@ -28,10 +30,10 @@ const SideNavigationComponent = ({ onShowCheckout }) => {
         <div className="badge badge-blue">{cart.length}</div>
         <img
           loading="lazy"
-          src={cart.length > 0 
+          src={isInCart 
             ? "/icons/cart-filled.svg" 
             : "/icons/cart.svg"}
-          className="image-gray"
+          className={`image-gray ${isInCart ? 'icon-active' : ''}`}
           alt="Cart"
         />
       </div>

@@ -1,9 +1,13 @@
 .checkout {
-    padding: 20px;
+    margin:120px 0 0 0;
   }
   
+  .checkout-page-heading {
+    color: #474747;
+    font: 700 32px Almarai, sans-serif;
+  }
   .checkout-products {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   
   .checkout-summary {

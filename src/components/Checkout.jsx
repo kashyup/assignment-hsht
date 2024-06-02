@@ -13,7 +13,7 @@ const Checkout = () => {
 
   return (
     <div className="checkout">
-      <h2>Checkout</h2>
+      <div className="checkout-page-heading">Checkout</div>
       <div className="checkout-products">
         {cart.map((item) => (
           <CheckoutProduct
