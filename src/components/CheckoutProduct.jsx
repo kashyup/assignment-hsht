@@ -1,6 +1,7 @@
-import React from "react";
-import { useShop } from "../context/ShopContext";
-import "./CheckoutProduct.css";
+// CheckoutProduct.js
+import React from 'react';
+import './CheckoutProduct.css';
+import { useShop } from '../context/ShopContext';
 
 const CheckoutProduct = ({
   id,
@@ -23,14 +24,16 @@ const CheckoutProduct = ({
             <div className="checkout-product-code">Product code: {id * 98}</div>
           </div>
         </div>
-        <div className="button-container">
-          <button className="button-minus" onClick={() => decreaseQuantity(id)}>
-            -
-          </button>
-          <div className="quantity">{quantity}</div>
-          <button className="button-plus" onClick={() => increaseQuantity(id)}>
-            +
-          </button>
+        <div className="quantity-control">
+          <div className="button-container">
+            <button className="button-minus" onClick={() => decreaseQuantity(id)}>
+              -
+            </button>
+            <div className="quantity">{quantity}</div>
+            <button className="button-plus" onClick={() => increaseQuantity(id)}>
+              +
+            </button>
+          </div>
           {available < 10 && (
             <div className="availability-notice">
               <span className="font-weight-normal">Only</span> {available}{" "}
@@ -39,7 +42,7 @@ const CheckoutProduct = ({
           )}
         </div>
         <div className="price-and-action">
-          <div className="price">£{price*quantity}</div>
+          <div className="price">£{price * quantity}</div>
           <button className="action-button" onClick={() => removeFromCart(id)}>X</button>
         </div>
       </div>

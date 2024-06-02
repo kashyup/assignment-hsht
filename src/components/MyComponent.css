@@ -41,7 +41,6 @@
 }
 
 .box {
-  display: flex;
   flex-wrap: wrap; /* Allows wrapping of product cards */
   gap: 20px;
 }
@@ -79,4 +78,21 @@
       flex: 1 1 100%; /* Single column layout for smaller screens */
       max-width: 100%;
   }
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px;
+  /* border: 1px solid #ddd;   */
+  border-radius: 30px;
+}
+
+.search-input::placeholder {
+  color: #e1dfdf;
 }

@@ -14,6 +14,7 @@ function App() {
   const [error, setError] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [showCheckout, setShowCheckout] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const getProducts = async () => {
@@ -32,16 +33,18 @@ function App() {
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
+    setShowCheckout(false);  // Ensure that selecting a category hides the checkout view
   };
 
   const handleShowCheckout = () => {
     setShowCheckout(true);
   };
 
-  const filteredProducts =
-    selectedCategory === "all"
-      ? products
-      : products.filter((product) => product.type === selectedCategory);
+  const filteredProducts = products.filter((product) => {
+    const matchesCategory = selectedCategory === "all" || product.type === selectedCategory;
+    const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   if (loading) {
     return <div>Loading...</div>;
@@ -54,7 +57,11 @@ function App() {
   return (
     <ShopProvider>
       <div className="my-component">
-        <Header onShowCheckout={handleShowCheckout} />
+        <Header
+          onShowCheckout={handleShowCheckout}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+        />
         <Categories onCategoryChange={handleCategoryChange} />
         {showCheckout ? (
           <Checkout />
@@ -71,9 +78,7 @@ function App() {
                         id={product.id}
                         title={product.name}
                         description={product.description}
-                        price={parseFloat(
-                          product.price.replace("£", "")
-                        ).toFixed(2)}
+                        price={parseFloat(product.price.replace("£", "")).toFixed(2)}
                         imgSrc={product.img}
                         available={product.available}
                       />
