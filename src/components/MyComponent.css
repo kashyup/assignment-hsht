@@ -2,14 +2,29 @@
   display: flex;
   flex-direction: column;
   padding: 40px 50px 0;
-  width: 2400px;
 }
+
+@media (max-width: 991px) {
+  .my-component {
+      padding: 0 20px;
+  }
+}
+.product-page-container{
+    display: flex;
+    margin-top: 22px;
+    width: 100%;
+    max-width: 1472px;
+    flex-direction: column;
+  }
+  @media (max-width: 991px) {
+    .product-page-container {
+      max-width: 100%;
+    }
+  }
 
 .custom-product-container {
   display: flex;
-  width: 1000px;
-  height: 300px;
-  max-width: 70%;
+  width: 70%;
   flex-direction: column;
   margin: 120px 0 0 0px;
 }

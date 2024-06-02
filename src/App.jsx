@@ -57,6 +57,7 @@ function App() {
   return (
     <ShopProvider>
       <div className="my-component">
+        <div className="product-page-container">
         <Header
           onShowCheckout={handleShowCheckout}
           searchQuery={searchQuery}
@@ -89,6 +90,8 @@ function App() {
             </div>
           </>
         )}
+        </div>
+        
       </div>
     </ShopProvider>
   );
