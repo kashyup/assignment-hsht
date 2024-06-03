@@ -17,9 +17,12 @@ const Footer = ({ total }) => {
           <div className="discount">£0.00</div>
         </div>
         <div className="custom-divider" />
-        <div className="total-container">
-          <div className="total-text">Total</div>
-          <div className="subtotal-price">£{total}</div>
+        <div className="total-and-button-container">
+          <div className="total-container">
+            <div className="total-text">Total</div>
+            <div className="subtotal-price">£{total}</div>
+          </div>
+          <button className="checkout-button">Checkout</button>
         </div>
       </div>
       <div className="separator-total"></div>

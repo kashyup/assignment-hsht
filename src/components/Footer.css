@@ -178,7 +178,7 @@
   text-align: right;
   justify-content: space-between;
   padding-bottom: 12px;
-  margin: 36px 0 0 112px;
+  margin: 36px 0 0 555px;
 }
 
 @media (max-width: 991px) {
@@ -249,4 +249,22 @@
   .flex-gap-container {
     white-space: initial;
   }
+}
+.total-and-button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+.checkout-button {
+  background-color: #7fd287;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: auto;
 }
