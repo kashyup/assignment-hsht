@@ -56,14 +56,15 @@ function App() {
 
   return (
     <ShopProvider>
-      <div className="my-component">
-        <div className="product-page-container">
+      <div className="component">
+        <div className="header-container">
         <Header
           onShowCheckout={handleShowCheckout}
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
         />
         <Categories onCategoryChange={handleCategoryChange} />
+      </div>
         {showCheckout ? (
           <Checkout />
         ) : (
@@ -92,7 +93,6 @@ function App() {
         )}
         </div>
         
-      </div>
     </ShopProvider>
   );
 }

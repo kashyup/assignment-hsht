@@ -19,9 +19,9 @@
   border-radius: 30px;
   box-shadow: 5px 5px 20px 0px rgba(133, 133, 133, 0.20);
   background-color: #FFF;
-  max-width: 1200px; /* Increased the max-width */
+  max-width: 1472px; /* Increased the max-width */
   flex-grow: 1;
-  width: 100%;
+  width: 63%;
   padding: 29px 32px;
   margin-bottom: 90px;
 }

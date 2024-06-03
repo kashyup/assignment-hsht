@@ -4,7 +4,7 @@ function MyComponent() {
   return (
     <>
       <div className="my-component">
-        <div className="div-2">
+        <div className="header-container">
           <div className="header">
             <div className="header-title">GROCERIES</div>
             <img search bar
