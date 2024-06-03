@@ -1,4 +1,4 @@
-/* .search-bar {
+.search-bar {
     border-radius: 30px;
     box-shadow: 5px 5px 20px 0px rgba(181, 181, 181, 0.20);
     border-color: rgba(190, 190, 190, 0.5);
@@ -35,14 +35,10 @@
       white-space: initial;
       padding: 0 20px;
     }
-  } */
+  }
   
   /* SearchBar.css */
-.search-bar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+
 
 .search-input {
   width: 100%;
@@ -51,4 +47,17 @@
 
 .search-input::placeholder {
   color: #aaa;
+}
+
+.search-input {
+  border: 1px solid #fff;
+  padding: 8px; /* Add some padding for better appearance */
+  border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+  outline: none; /* Remove default outline on focus */
+  color: #000; /* Set text color */
+  background-color: #fff; /* Optional: Set background color */
+}
+
+.search-input:focus {
+  border-color: #fff; /* Optional: Change border color on focus */
 }

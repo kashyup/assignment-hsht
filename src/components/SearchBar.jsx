@@ -13,7 +13,7 @@ export default function SearchBar({ searchQuery, setSearchQuery }) {
         className="search-input"
         value={searchQuery}
         onChange={handleInputChange}
-        placeholder="Search products..."
+        placeholder="Search..."
       />
       <img
         loading="lazy"

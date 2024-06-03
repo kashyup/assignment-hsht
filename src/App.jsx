@@ -1,3 +1,4 @@
+// App.js
 import React, { useEffect, useState } from "react";
 import ProductCard from "./components/ProductCard";
 import Header from "./components/Header";
@@ -40,6 +41,13 @@ function App() {
     setShowCheckout(true);
   };
 
+  const handleSearchQueryChange = (query) => {
+    setSearchQuery(query);
+    if (showCheckout) {
+      setShowCheckout(false);  // Switch to product view if currently in checkout view
+    }
+  };
+
   const filteredProducts = products.filter((product) => {
     const matchesCategory = selectedCategory === "all" || product.type === selectedCategory;
     const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
@@ -58,12 +66,12 @@ function App() {
     <ShopProvider>
       <div className="component">
         <div className="header-container">
-        <Header
-          onShowCheckout={handleShowCheckout}
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-        />
-      </div>
+          <Header
+            onShowCheckout={handleShowCheckout}
+            searchQuery={searchQuery}
+            setSearchQuery={handleSearchQueryChange}
+          />
+        </div>
         <Categories onCategoryChange={handleCategoryChange} />
         {showCheckout ? (
           <Checkout />
@@ -91,8 +99,7 @@ function App() {
             </div>
           </>
         )}
-        </div>
-        
+      </div>
     </ShopProvider>
   );
 }
