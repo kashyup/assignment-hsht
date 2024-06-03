@@ -1,4 +1,3 @@
-// CheckoutProduct.js
 import React from 'react';
 import './CheckoutProduct.css';
 import { useShop } from '../context/ShopContext';
@@ -20,8 +19,10 @@ const CheckoutProduct = ({
         <div className="checkout-product-image-container">
           <img src={imgSrc} alt={title} />
           <div className="checkout-product-details">
-            <div className="checkout-product-title">{title}</div>
-            <div className="checkout-product-code">Product code: {id * 98}</div>
+            <div className="title-code-container">
+              <div className="checkout-product-title">{title}</div>
+              <div className="checkout-product-code">Product code: {id * 98}</div>
+            </div>
           </div>
         </div>
         <div className="quantity-control">

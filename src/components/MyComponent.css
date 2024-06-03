@@ -4,6 +4,13 @@
   padding: 40px 50px 0;
 }
 
+.header-container {
+  display: flex;
+  margin-top: 22px ;
+  width: 100%;
+  max-width: 1472px;
+  flex-direction: column;
+}
 @media (max-width: 991px) {
   .my-component {
       padding: 0 20px;

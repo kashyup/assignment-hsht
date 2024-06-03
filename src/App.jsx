@@ -63,8 +63,8 @@ function App() {
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
         />
-        <Categories onCategoryChange={handleCategoryChange} />
       </div>
+        <Categories onCategoryChange={handleCategoryChange} />
         {showCheckout ? (
           <Checkout />
         ) : (
